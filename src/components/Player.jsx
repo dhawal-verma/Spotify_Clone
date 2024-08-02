@@ -6,7 +6,7 @@ import Track from './Track';
 const Player = () => {
 
     const {audioRef,track} = useContext(PlayerContext);
-
+console.log(track)
   return ( 
     <div className='w-full h-full px-20 py-20'>
         <div className=' text-white pl-10'>
@@ -17,7 +17,7 @@ const Player = () => {
         </div>
         
         <Track />
-        {/* <audio ref={audioRef} src={track.url} preload='auto'></audio> */}
+        <audio ref={audioRef} src={track} preload='auto'></audio>
     </div>
   )
 }

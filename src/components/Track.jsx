@@ -3,7 +3,7 @@ import { assests } from '../assests/assests'
 import { PlayerContext } from '../context/PlayerContext'
 const Track = () => {
 
-    // const {play,pause,playStatus,seekBar,seekBg} = useContext(PlayerContext)
+    const {play,pause,playStatus,seekBar,seekBg} = useContext(PlayerContext)
   return (
     <div className='text-white '>
         <div className='flex items-center gap-5 '>
