@@ -5,7 +5,8 @@ import Track from './Track';
 
 const Player = () => {
 
-    const {audioRef,track} = useContext(PlayerContext);
+    const {audioRef,track,setTrack,data,list} = useContext(PlayerContext);
+    setTrack(list && data);
 console.log(track)
   return ( 
     <div className='w-full h-full px-20 py-20'>

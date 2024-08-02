@@ -38,8 +38,9 @@ const PlayerContextProvider = (props) => {
     audioRef.current.pause();
     setPlayStatus(false);
   };
-  
+//   console.log(list && data[0])
   const [track, setTrack] = useState(list && data[0]);
+
   const contextValue = {
     audioRef,
     seekBar,

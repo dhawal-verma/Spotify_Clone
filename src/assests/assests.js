@@ -6,7 +6,8 @@ import pause from './pause.png'
 import sound from './sound.png'
 import prev from './prev.png'
 import cover from './cover.png'
+import play from './play.png'
 
 export const assests ={
-    logo,lamp,next,setting,pause,sound,prev,cover
+    logo,lamp,next,setting,pause,sound,prev,cover,play
 }
