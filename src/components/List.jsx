@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-
-const List = ({list:{cover,name,artist,url}}) => {
+import React, { useContext, useState } from 'react'
+import { PlayerContext } from '../context/PlayerContext';
+const List = ({list:{cover,name,artist,url,id}}) => {
 
     const [duration, setDuration] = useState(1)
     var au = document.createElement('audio');
@@ -8,12 +8,15 @@ const List = ({list:{cover,name,artist,url}}) => {
     au.addEventListener('loadedmetadata', function(){
         setDuration(au.duration/60);
     },false);
-
+    // console.log(id)
+    const {playWithId} = useContext(PlayerContext)
+    
+  
   return (
-    <div className='p-4 h-full flex align-middle justify-center '>
+    <div onClick={()=>playWithId(id)} className='p-4 h-full flex align-middle justify-center cursor-pointer'>
         
-            <div className='rounded-full'>
-                <img src={cover} alt="img" />
+            <div className='w-[48px] h-[48px]'>
+                <img className='rounded-full' src={`https://cms.samespace.com/assets/${cover}`} alt="img" />
             </div>
         <div className='flex align-bottom justify-between px-5 h-full w-full'>
 

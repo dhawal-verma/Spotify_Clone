@@ -5,20 +5,20 @@ import Track from './Track';
 
 const Player = () => {
 
-    const {audioRef,track,setTrack,data,list} = useContext(PlayerContext);
-    setTrack(list && data);
-console.log(track)
+    const {audioRef,track,setTrack} = useContext(PlayerContext);
+    // setTrack(list && data);
+    console.log("tarc" + track)
   return ( 
     <div className='w-full h-full px-20 py-20'>
         <div className=' text-white pl-10'>
-            <h1 className='text-2xl font-bold pb-1'>Ghost Stories</h1>
-            <div className='text-sm font-extralight'>Coldplay</div>
+            <h1 className='text-2xl font-bold pb-1'>{track.name}</h1>
+            <div className='text-sm font-extralight'>{track.artist} </div>
 
-            <img className='mt-7 max-w-[350px] max-h-[380px] rounded-lg'  src={assests.cover} alt="lamp" />
+            <img className='mt-7 max-w-[350px] max-h-[380px] rounded-lg'  src={`https://cms.samespace.com/assets/${track.cover}`} alt="lamp" />
         </div>
         
         <Track />
-        <audio ref={audioRef} src={track} preload='auto'></audio>
+        <audio ref={audioRef} src={track.url} preload='auto'></audio>
     </div>
   )
 }
